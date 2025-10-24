@@ -5,8 +5,7 @@
 <img width="450" height="auto" alt="image" src="https://github.com/user-attachments/assets/a5ea8982-8e5b-4729-af69-dcfa7ad9d9e1" />
 
 
-<b>Demo</b>
-recordline1.github.io/Furniture-store/
+<a href="recordline1.github.io/Furniture-store/"><b>Demo</b></a>
  
 <i>Technologies used</i>
 <div>
