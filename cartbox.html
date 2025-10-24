@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Cart</title>
+		<script type="module" crossorigin="" src="./js/cartbox.min.js?v=1761305898456"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761305898456">
+		<link rel="stylesheet" crossorigin="" href="./css/cartbox.min.css?v=1761305898456">
+		<link rel="stylesheet" crossorigin="" href="./css/headernavigation.min.css?v=1761305898456">
+	</head>
+	<body data-fls-watcher="">
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Home</a>
+								</li>
+								<li class="menu__item">
+									<a href="shop.html" class="menu__link">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="blog.html" class="menu__link">Blog</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link">Contacts</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+					<div class="header__action">
+						<div class="header__cart">
+							<button type="button" data-fls-popup-link="popup" class="header__action--icon --icon-cart"></button>
+							<span class="cart__quantity" data-fls-addtocart="">1</span>
+						</div>
+						<button type="button" data-fls-popup-link="heart" class="header__action--icon --icon-heart"></button>
+						<button type="button" data-fls-popup-link="search" class="header__action--icon --icon-search"></button>
+						<a href="myaccount.html" class="header__action--icon --icon-man"></a>
+					</div>
+				</div>
+				<div data-fls-popup="search" aria-hidden="true" class="search">
+					<div data-fls-search-wrapper="" class="search__wrapper">
+						<div data-fls-search-body="" class="search__body">
+							<div class="search__header">
+								<h2 class="search__title">Search</h2>
+								<button data-fls-popup-close="" class="search__close --icon-close-circle-svgrepo-com"></button>
+							</div>
+							<form class="search__form">
+								<input data-fls-input="" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="" class="search__input">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="popup" aria-hidden="true" class="popup">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<div class="popup__header">
+								<h2 class="popup__title">Shopping Cart</h2>
+								<button data-fls-popup-close="" type="button" class="popup__close --icon-cart-close"></button>
+							</div>
+							<div data-fls-popup-content="" class="popup__items">
+								<div class="popup__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<div class="popup__end-price">
+								<span class="popup__end-price_title">Subtotal</span>
+								<span class="popup__end-price_price">Rs. 250,000.00</span>
+							</div>
+							<div class="popup__bottom">
+								<a href="cartbox.html">View Cart</a>
+								<a href="checkout.html">Checkout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="heart" aria-hidden="true" class="heart">
+					<div data-fls-popup-wrapper="" class="heart__wrapper">
+						<div data-fls-popup-body="" class="heart__body">
+							<div class="heart__header">
+								<h2 class="heart__title">My Favorite</h2>
+								<button type="button" data-fls-popup-close="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="19" height="19">
+										<path d="M12 21s-6-4-9-8c-2-3 0-7 3-8s6 1 6 1 3-2 6-1 5 5 3 8c-3 4-9 8-9 8z" fill="none" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										<line x1="9" y1="9" x2="15" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+										<line x1="15" y1="9" x2="9" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+									</svg>
+								</button>
+							</div>
+							<div data-fls-popup-content="" class="heart__items">
+								<div class="heart__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<a href="#" class="heart__button">Add to cart</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div data-fls-headernavigation="" class="navigation">
+				<div class="navigation__container">
+					<div class="navigation__body">
+						<a href="index.html" class="navigation__logo">
+							<img src="./assets/img/logo.svg" alt="Image">
+						</a>
+						<h2 class="navigation__title">Cart</h2>
+						<div class="navigation__links">
+							<a href="index.html" class="navigation__link --icon-arrow">Home</a>
+							<a href="javascript:void(0)" class="navigation__link--active">Cart</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<main class="view-cart">
+				<div class="view-cart__container">
+					<div class="view-cart__info">
+						<div class="info-cart">
+							<ul class="info-cart__list">
+								<li class="info-cart__title">Product</li>
+								<li class="info-cart__title">Price</li>
+								<li class="info-cart__title">Quantity</li>
+								<li class="info-cart__title">Subtotal</li>
+								<li class="info-cart__title info-cart__title_del"></li>
+							</ul>
+							<ul class="info-cart__list">
+								<li class="info-cart__text">
+									<picture>
+										<img alt="Image" src="./assets/img/cart/asgaardsofa.webp">
+									</picture>
+									<span class="info-cart__text_product">Asgaard sofa</span>
+								</li>
+								<li class="info-cart__text">Rs. 250,000.00</li>
+								<li class="info-cart__text">
+									<span class="info-cart__text_quantity">1</span>
+								</li>
+								<li class="info-cart__text info-cart__text_subtotal">Rs. 250,000.00</li>
+								<li class="info-cart__text">
+									<button type="button" class="info-cart__text_icon">
+										<svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M20.625 4H17.125V1.8125C17.125 0.847266 16.3402 0.0625 15.375 0.0625H6.625C5.65977 0.0625 4.875 0.847266 4.875 1.8125V4H1.375C0.891016 4 0.5 4.39102 0.5 4.875V5.75C0.5 5.87031 0.598437 5.96875 0.71875 5.96875H2.37031L3.0457 20.2695C3.08945 21.202 3.86055 21.9375 4.79297 21.9375H17.207C18.1422 21.9375 18.9105 21.2047 18.9543 20.2695L19.6297 5.96875H21.2812C21.4016 5.96875 21.5 5.87031 21.5 5.75V4.875C21.5 4.39102 21.109 4 20.625 4ZM15.1562 4H6.84375V2.03125H15.1562V4Z" fill="#FBEBB5"></path>
+										</svg>
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="view-cart__total total-cart">
+						<h3 class="total-cart__title">Cart Totals</h3>
+						<div class="total-cart__text">
+							<span class="total-cart__label">Subtotal</span>
+							Rs. 250,000.00
+						</div>
+						<div class="total-cart__text">
+							<span class="total-cart__label">Total</span>
+							<span class="total-cart__label--color">Rs. 250,000.00</span>
+						</div>
+						<a class="total-cart__button" href="checkout.html">Checkout</a>
+					</div>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__top">
+					<div class="footer__container">
+						<div class="footer__advantages advantages">
+							<div class="advantages__column">
+								<div class="advantages__title">Free Delivery</div>
+								<p class="advantages__text">For all oders over $50, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">90 Days Return</div>
+								<p class="advantages__text">If goods have problems, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">Secure Payment</div>
+								<p class="advantages__text">100% secure payment, consectetur adipim scing elit.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__container">
+					<div class="footer__body body-footer">
+						<a href="#" class="body-footer__logo"></a>
+						<div class="body-footer__column">
+							<p class="body-footer__about">400 University Drive Suite 200 Coral Gables,
+					FL 33134 USA</p>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Links</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Home</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Shop</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">About</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Contact</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Help</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Payment Options</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Returns</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Privacy Policies</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div class="body-footer__column">
+							<div class="body-footer__title">Newsletter</div>
+							<form class="body-footer__form" action="files/sendmail/sendmail.php" method="POST">
+								<input type="text" name="form[email]" data-error="Error" placeholder="Enter Your Email Address" class="body-footer__input">
+								<button type="submit" class="body-footer__button">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+					<div class="footer__copy">
+						<div class="footer__text">2023 Meubel House. All rights reverved</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

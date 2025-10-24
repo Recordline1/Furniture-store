@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Contact</title>
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1761305898455"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761305898455">
+		<link rel="stylesheet" crossorigin="" href="./css/contact.min.css?v=1761305898455">
+		<link rel="stylesheet" crossorigin="" href="./css/headernavigation.min.css?v=1761305898455">
+	</head>
+	<body data-fls-watcher="">
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Home</a>
+								</li>
+								<li class="menu__item">
+									<a href="shop.html" class="menu__link">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="blog.html" class="menu__link">Blog</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link menu__link--active">Contacts</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+					<div class="header__action">
+						<div class="header__cart">
+							<button type="button" data-fls-popup-link="popup" class="header__action--icon --icon-cart"></button>
+							<span class="cart__quantity" data-fls-addtocart="">1</span>
+						</div>
+						<button type="button" data-fls-popup-link="heart" class="header__action--icon --icon-heart"></button>
+						<button type="button" data-fls-popup-link="search" class="header__action--icon --icon-search"></button>
+						<a href="myaccount.html" class="header__action--icon --icon-man"></a>
+					</div>
+				</div>
+				<div data-fls-popup="search" aria-hidden="true" class="search">
+					<div data-fls-search-wrapper="" class="search__wrapper">
+						<div data-fls-search-body="" class="search__body">
+							<div class="search__header">
+								<h2 class="search__title">Search</h2>
+								<button data-fls-popup-close="" class="search__close --icon-close-circle-svgrepo-com"></button>
+							</div>
+							<form class="search__form">
+								<input data-fls-input="" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="" class="search__input">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="popup" aria-hidden="true" class="popup">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<div class="popup__header">
+								<h2 class="popup__title">Shopping Cart</h2>
+								<button data-fls-popup-close="" type="button" class="popup__close --icon-cart-close"></button>
+							</div>
+							<div data-fls-popup-content="" class="popup__items">
+								<div class="popup__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<div class="popup__end-price">
+								<span class="popup__end-price_title">Subtotal</span>
+								<span class="popup__end-price_price">Rs. 250,000.00</span>
+							</div>
+							<div class="popup__bottom">
+								<a href="cartbox.html">View Cart</a>
+								<a href="checkout.html">Checkout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="heart" aria-hidden="true" class="heart">
+					<div data-fls-popup-wrapper="" class="heart__wrapper">
+						<div data-fls-popup-body="" class="heart__body">
+							<div class="heart__header">
+								<h2 class="heart__title">My Favorite</h2>
+								<button type="button" data-fls-popup-close="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="19" height="19">
+										<path d="M12 21s-6-4-9-8c-2-3 0-7 3-8s6 1 6 1 3-2 6-1 5 5 3 8c-3 4-9 8-9 8z" fill="none" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										<line x1="9" y1="9" x2="15" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+										<line x1="15" y1="9" x2="9" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+									</svg>
+								</button>
+							</div>
+							<div data-fls-popup-content="" class="heart__items">
+								<div class="heart__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<a href="#" class="heart__button">Add to cart</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div data-fls-headernavigation="" class="navigation">
+				<div class="navigation__container">
+					<div class="navigation__body">
+						<a href="index.html" class="navigation__logo">
+							<img src="./assets/img/logo.svg" alt="Image">
+						</a>
+						<h2 class="navigation__title">Contact</h2>
+						<div class="navigation__links">
+							<a href="index.html" class="navigation__link --icon-arrow">Home</a>
+							<a href="javascript:void(0)" class="navigation__link--active">Contact</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<main class="contact">
+				<div class="contact__container">
+					<div class="contact__header">
+						<h2 class="contact__title">Get In Touch With Us</h2>
+						<div class="contact__text">
+							<p>
+								For More Information About Our Product & Services. Please Feel Free To Drop Us An Email. Our Staff
+                    Always Be There To Help You Out. Do Not Hesitate!
+							</p>
+						</div>
+					</div>
+					<div class="contact__body">
+						<div class="contact__address address">
+							<div class="address__column">
+								<div class="address__icon">
+									<svg width="22" height="29" viewbox="0 0 22 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11 0C8.08369 0.00346197 5.28779 1.17074 3.22564 3.24579C1.16348 5.32083 0.00345217 8.1342 1.17029e-05 11.0688C-0.00348119 13.4669 0.774992 15.7999 2.21601 17.71C2.21601 17.71 2.51601 18.1075 2.56501 18.1648L11 28.175L19.439 18.1598C19.483 18.1065 19.784 17.71 19.784 17.71L19.785 17.707C21.2253 15.7977 22.0034 13.4658 22 11.0688C21.9966 8.1342 20.8365 5.32083 18.7744 3.24579C16.7122 1.17074 13.9163 0.00346197 11 0ZM11 15.0938C10.2089 15.0938 9.43553 14.8577 8.77773 14.4154C8.11993 13.9731 7.60724 13.3445 7.30449 12.6091C7.00174 11.8736 6.92253 11.0643 7.07687 10.2835C7.23121 9.50274 7.61217 8.78555 8.17158 8.22264C8.73099 7.65974 9.44373 7.27639 10.2197 7.12109C10.9956 6.96578 11.7998 7.04549 12.5307 7.35013C13.2616 7.65478 13.8864 8.17067 14.3259 8.83258C14.7654 9.49449 15 10.2727 15 11.0688C14.9987 12.1358 14.5768 13.1588 13.827 13.9134C13.0771 14.6679 12.0605 15.0924 11 15.0938Z" fill="black"></path>
+									</svg>
+								</div>
+								<div class="address__body">
+									<div class="address__title">Address</div>
+									<div class="address__text">236 5th SE Avenue, New York NY10000, United States</div>
+								</div>
+							</div>
+							<div class="address__column">
+								<div class="address__icon">
+									<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M22.6091 18.425L17.5279 13.805C17.2877 13.5867 16.972 13.4703 16.6476 13.4803C16.3232 13.4903 16.0154 13.626 15.7891 13.8587L12.7979 16.935C12.0779 16.7975 10.6304 16.3462 9.14035 14.86C7.65035 13.3687 7.1991 11.9175 7.06535 11.2025L10.1391 8.20999C10.3721 7.9839 10.508 7.67602 10.5181 7.3515C10.5281 7.02698 10.4115 6.71129 10.1929 6.47124L5.5741 1.39124C5.35541 1.15044 5.05145 1.00437 4.72679 0.984068C4.40214 0.963762 4.08235 1.07082 3.83535 1.28249L1.12285 3.60874C0.906741 3.82564 0.777752 4.11431 0.760352 4.41999C0.741602 4.73249 0.384103 12.135 6.1241 17.8775C11.1316 22.8837 17.4041 23.25 19.1316 23.25C19.3841 23.25 19.5391 23.2425 19.5804 23.24C19.886 23.2229 20.1745 23.0933 20.3904 22.8762L22.7154 20.1625C22.9279 19.9163 23.0357 19.5968 23.0159 19.2721C22.996 18.9475 22.85 18.6435 22.6091 18.425Z" fill="black"></path>
+									</svg>
+								</div>
+								<div class="address__body">
+									<div class="address__title">Phone</div>
+									<div class="address__text">
+										<a href="tel:+845466789">Mobile: +(84) 546-6789</a>
+										<a href="tel:+844566789">Hotline: +(84) 456-6789</a>
+									</div>
+								</div>
+							</div>
+							<div class="address__column">
+								<div class="address__icon">
+									<svg width="23" height="23" viewbox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0_63_247)">
+											<path d="M23 11.5C23 14.55 21.7884 17.4751 19.6317 19.6317C17.4751 21.7884 14.55 23 11.5 23C8.45001 23 5.52494 21.7884 3.36827 19.6317C1.2116 17.4751 0 14.55 0 11.5C0 8.45001 1.2116 5.52494 3.36827 3.36827C5.52494 1.2116 8.45001 0 11.5 0C14.55 0 17.4751 1.2116 19.6317 3.36827C21.7884 5.52494 23 8.45001 23 11.5ZM11.5 5.03125C11.5 4.84063 11.4243 4.65781 11.2895 4.52302C11.1547 4.38823 10.9719 4.3125 10.7812 4.3125C10.5906 4.3125 10.4078 4.38823 10.273 4.52302C10.1382 4.65781 10.0625 4.84063 10.0625 5.03125V12.9375C10.0625 13.0642 10.0961 13.1886 10.1597 13.2982C10.2233 13.4077 10.3147 13.4985 10.4247 13.5614L15.456 16.4364C15.6211 16.5256 15.8146 16.5467 15.995 16.4952C16.1755 16.4437 16.3287 16.3236 16.4218 16.1607C16.5149 15.9977 16.5406 15.8048 16.4933 15.6232C16.4461 15.4415 16.3297 15.2856 16.169 15.1886L11.5 12.5206V5.03125Z" fill="black"></path>
+										</g>
+										<defs>
+											<clipPath id="clip0_63_247">
+												<rect width="23" height="23" fill="white"></rect>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="address__body">
+									<div class="address__title">Working Time</div>
+									<div class="address__text">
+										Monday-Friday: 9:00 - 22:00
+                            Saturday-Sunday: 9:00 - 21:00
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="contact__form form-contact">
+							<form class="form__form" action="files/sendmail/sendmail.php" method="POST">
+								<div class="form__block">
+									<label class="form__label">Your name</label>
+									<input type="text" name="form[email]" data-error="Error" placeholder="Your name" class="form__input">
+								</div>
+								<div class="form__block">
+									<label class="form__label">Email address</label>
+									<input type="email" required name="form[email]" data-error="Error" placeholder="Email address" class="form__input">
+								</div>
+								<div class="form__block">
+									<label class="form__label">Subject</label>
+									<input type="text" required name="form[email]" data-error="Error" placeholder="This is an optional" class="form__input">
+								</div>
+								<div class="form__block">
+									<label class="form__label">Message</label>
+									<textarea data-error="Error" placeholder="Hi! i’d like to ask about" class="form__textarea"></textarea>
+									<button type="submit" class="form__button">Sbumit</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__top">
+					<div class="footer__container">
+						<div class="footer__advantages advantages">
+							<div class="advantages__column">
+								<div class="advantages__title">Free Delivery</div>
+								<p class="advantages__text">For all oders over $50, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">90 Days Return</div>
+								<p class="advantages__text">If goods have problems, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">Secure Payment</div>
+								<p class="advantages__text">100% secure payment, consectetur adipim scing elit.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__container">
+					<div class="footer__body body-footer">
+						<a href="#" class="body-footer__logo"></a>
+						<div class="body-footer__column">
+							<p class="body-footer__about">400 University Drive Suite 200 Coral Gables,
+					FL 33134 USA</p>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Links</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Home</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Shop</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">About</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Contact</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Help</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Payment Options</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Returns</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Privacy Policies</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div class="body-footer__column">
+							<div class="body-footer__title">Newsletter</div>
+							<form class="body-footer__form" action="files/sendmail/sendmail.php" method="POST">
+								<input type="text" name="form[email]" data-error="Error" placeholder="Enter Your Email Address" class="body-footer__input">
+								<button type="submit" class="body-footer__button">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+					<div class="footer__copy">
+						<div class="footer__text">2023 Meubel House. All rights reverved</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

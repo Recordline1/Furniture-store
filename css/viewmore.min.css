@@ -1,0 +1,1 @@
+.viewmore--center{text-align:center}.viewmore__title{font-size:1.25rem;padding:.8125rem 0;position:relative}.viewmore__title:before{background:linear-gradient(90deg,#000 10%,#c4c4c4 90%);bottom:0;content:"";height:.125rem;left:0;left:50%;position:absolute;transition:all .3s;width:0}.viewmore__title:hover:before{left:0;width:100%}

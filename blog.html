@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Blog</title>
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1761305898458"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761305898458">
+		<link rel="stylesheet" crossorigin="" href="./css/blog.min.css?v=1761305898458">
+		<link rel="stylesheet" crossorigin="" href="./css/headernavigation.min.css?v=1761305898458">
+	</head>
+	<body data-fls-watcher="">
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Home</a>
+								</li>
+								<li class="menu__item">
+									<a href="shop.html" class="menu__link">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="blog.html" class="menu__link menu__link--active">Blog</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link">Contacts</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+					<div class="header__action">
+						<div class="header__cart">
+							<button type="button" data-fls-popup-link="popup" class="header__action--icon --icon-cart"></button>
+							<span class="cart__quantity" data-fls-addtocart="">1</span>
+						</div>
+						<button type="button" data-fls-popup-link="heart" class="header__action--icon --icon-heart"></button>
+						<button type="button" data-fls-popup-link="search" class="header__action--icon --icon-search"></button>
+						<a href="myaccount.html" class="header__action--icon --icon-man"></a>
+					</div>
+				</div>
+				<div data-fls-popup="search" aria-hidden="true" class="search">
+					<div data-fls-search-wrapper="" class="search__wrapper">
+						<div data-fls-search-body="" class="search__body">
+							<div class="search__header">
+								<h2 class="search__title">Search</h2>
+								<button data-fls-popup-close="" class="search__close --icon-close-circle-svgrepo-com"></button>
+							</div>
+							<form class="search__form">
+								<input data-fls-input="" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="" class="search__input">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="popup" aria-hidden="true" class="popup">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<div class="popup__header">
+								<h2 class="popup__title">Shopping Cart</h2>
+								<button data-fls-popup-close="" type="button" class="popup__close --icon-cart-close"></button>
+							</div>
+							<div data-fls-popup-content="" class="popup__items">
+								<div class="popup__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<div class="popup__end-price">
+								<span class="popup__end-price_title">Subtotal</span>
+								<span class="popup__end-price_price">Rs. 250,000.00</span>
+							</div>
+							<div class="popup__bottom">
+								<a href="cartbox.html">View Cart</a>
+								<a href="checkout.html">Checkout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="heart" aria-hidden="true" class="heart">
+					<div data-fls-popup-wrapper="" class="heart__wrapper">
+						<div data-fls-popup-body="" class="heart__body">
+							<div class="heart__header">
+								<h2 class="heart__title">My Favorite</h2>
+								<button type="button" data-fls-popup-close="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="19" height="19">
+										<path d="M12 21s-6-4-9-8c-2-3 0-7 3-8s6 1 6 1 3-2 6-1 5 5 3 8c-3 4-9 8-9 8z" fill="none" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										<line x1="9" y1="9" x2="15" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+										<line x1="15" y1="9" x2="9" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+									</svg>
+								</button>
+							</div>
+							<div data-fls-popup-content="" class="heart__items">
+								<div class="heart__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<a href="#" class="heart__button">Add to cart</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div data-fls-headernavigation="" class="navigation">
+				<div class="navigation__container">
+					<div class="navigation__body">
+						<a href="index.html" class="navigation__logo">
+							<img src="./assets/img/logo.svg" alt="Image">
+						</a>
+						<h2 class="navigation__title">Blog</h2>
+						<div class="navigation__links">
+							<a href="index.html" class="navigation__link --icon-arrow">Home</a>
+							<a href="javascript:void(0)" class="navigation__link--active">Blog</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<main class="blog">
+				<div class="blog__container">
+					<div class="blog__body">
+						<div class="blog__blogs">
+							<div data-fls-blogcontent="" class="blog-content">
+								<a href="javascript:void(0)" class="blog-content__image">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/blogs/blog/01-600.webp" type="image/webp">
+										<img alt="Image" src="./assets/img/blogs/blog/01.webp">
+									</picture>
+								</a>
+								<div class="blog-content__icons">
+									<span class="--icon-admin">Admin</span>
+									<span class="--icon-date">14 Oct 2022</span>
+									<span class="--icon-label">Wood</span>
+								</div>
+								<h2 class="blog-content__title">
+									<a href="javascript:void(0)">Going all-in with millennial design</a>
+								</h2>
+								<div class="blog-content__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.
+									</p>
+								</div>
+								<a href="javascript:void(0)" class="blog-content__read">Read more</a>
+							</div>
+							<div data-fls-blogcontent="" class="blog-content">
+								<a href="javascript:void(0)" class="blog-content__image">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/blogs/blog/02-600.webp" type="image/webp">
+										<img alt="Image" src="./assets/img/blogs/blog/02.webp">
+									</picture>
+								</a>
+								<div class="blog-content__icons">
+									<span class="--icon-admin">Admin</span>
+									<span class="--icon-date">14 Oct 2022</span>
+									<span class="--icon-label">Handmade</span>
+								</div>
+								<h2 class="blog-content__title">
+									<a href="javascript:void(0)">Exploring new ways of decorating</a>
+								</h2>
+								<div class="blog-content__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.
+									</p>
+								</div>
+								<a href="javascript:void(0)" class="blog-content__read">Read more</a>
+							</div>
+							<div data-fls-blogcontent="" class="blog-content">
+								<a href="javascript:void(0)" class="blog-content__image">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/blogs/blog/03-600.webp" type="image/webp">
+										<img alt="Image" src="./assets/img/blogs/blog/03.webp">
+									</picture>
+								</a>
+								<div class="blog-content__icons">
+									<span class="--icon-admin">Admin</span>
+									<span class="--icon-date">14 Oct 2022</span>
+									<span class="--icon-label">Wood</span>
+								</div>
+								<h2 class="blog-content__title">
+									<a href="javascript:void(0)">Handmade pieces that took time to make</a>
+								</h2>
+								<div class="blog-content__text">
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.
+									</p>
+								</div>
+								<a href="javascript:void(0)" class="blog-content__read">Read more</a>
+							</div>
+						</div>
+						<div class="blog__sidebar sidebar">
+							<div class="sidebar__categories">
+								<div class="sidebar__categories_search">
+									<input data-fls-input="" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="" class="sidebar__categories_input">
+									<span class="sidebar__categories_search-icon --icon-search"></span>
+								</div>
+								<div class="sidebar__categories-items">
+									<div class="sidebar__categories_title">Categories</div>
+									<div class="sidebar__categories_categori">
+										<a href="javascript:void(0)" class="sidebar__categories_categori-text">Crafts</a>
+										<div class="sidebar__categories_categori-number">2</div>
+									</div>
+									<div class="sidebar__categories_categori">
+										<a href="javascript:void(0)" class="sidebar__categories_categori-text">Design</a>
+										<div class="sidebar__categories_categori-number">8</div>
+									</div>
+									<div class="sidebar__categories_categori">
+										<a href="javascript:void(0)" class="sidebar__categories_categori-text">Handmade</a>
+										<div class="sidebar__categories_categori-number">7</div>
+									</div>
+									<div class="sidebar__categories_categori">
+										<a href="javascript:void(0)" class="sidebar__categories_categori-text">Interior</a>
+										<div class="sidebar__categories_categori-number">1</div>
+									</div>
+									<div class="sidebar__categories_categori">
+										<a href="javascript:void(0)" class="sidebar__categories_categori-text">Wood</a>
+										<div class="sidebar__categories_categori-number">6</div>
+									</div>
+								</div>
+							</div>
+							<div class="sidebar__posts">
+								<div class="sidebar__posts_title">Recent Posts</div>
+								<div class="sidebar__posts_items">
+									<a href="javascript:void(0)">
+										<div class="sidebar__posts_item">
+											<div class="sidebar__posts_img">
+												<picture>
+													<img alt="Image" src="./assets/img/blogs/blog/mini01.webp">
+												</picture>
+											</div>
+											<div class="sidebar__posts_body">
+												<div class="sidebar__posts_text">Going all-in with millennial design</div>
+												<div class="sidebar__posts_date">03 Aug 2022</div>
+											</div>
+										</div>
+									</a>
+									<a href="javascript:void(0)">
+										<div class="sidebar__posts_item">
+											<div class="sidebar__posts_img">
+												<picture>
+													<img alt="Image" src="./assets/img/blogs/blog/mini02.webp">
+												</picture>
+											</div>
+											<div class="sidebar__posts_body">
+												<div class="sidebar__posts_text">Exploring new ways of decorating</div>
+												<div class="sidebar__posts_date">03 Aug 2022</div>
+											</div>
+										</div>
+									</a>
+									<a href="javascript:void(0)">
+										<div class="sidebar__posts_item">
+											<div class="sidebar__posts_img">
+												<picture>
+													<img alt="Image" src="./assets/img/blogs/blog/mini03.webp">
+												</picture>
+											</div>
+											<div class="sidebar__posts_body">
+												<div class="sidebar__posts_text">Handmade pieces that took time to make</div>
+												<div class="sidebar__posts_date">03 Aug 2022</div>
+											</div>
+										</div>
+									</a>
+									<a href="javascript:void(0)">
+										<div class="sidebar__posts_item">
+											<div class="sidebar__posts_img">
+												<picture>
+													<img alt="Image" src="./assets/img/blogs/blog/mini04.webp">
+												</picture>
+											</div>
+											<div class="sidebar__posts_body">
+												<div class="sidebar__posts_text">Modern home in Milan</div>
+												<div class="sidebar__posts_date">03 Aug 2022</div>
+											</div>
+										</div>
+									</a>
+									<a href="javascript:void(0)">
+										<div class="sidebar__posts_item">
+											<div class="sidebar__posts_img">
+												<picture>
+													<img alt="Image" src="./assets/img/blogs/blog/mini05.webp">
+												</picture>
+											</div>
+											<div class="sidebar__posts_body">
+												<div class="sidebar__posts_text">Colorful office redesign</div>
+												<div class="sidebar__posts_date">03 Aug 2022</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="blog__cout-pages">
+						<span class="--active">1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>...</span>
+					</div>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__top">
+					<div class="footer__container">
+						<div class="footer__advantages advantages">
+							<div class="advantages__column">
+								<div class="advantages__title">Free Delivery</div>
+								<p class="advantages__text">For all oders over $50, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">90 Days Return</div>
+								<p class="advantages__text">If goods have problems, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">Secure Payment</div>
+								<p class="advantages__text">100% secure payment, consectetur adipim scing elit.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__container">
+					<div class="footer__body body-footer">
+						<a href="#" class="body-footer__logo"></a>
+						<div class="body-footer__column">
+							<p class="body-footer__about">400 University Drive Suite 200 Coral Gables,
+					FL 33134 USA</p>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Links</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Home</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Shop</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">About</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Contact</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Help</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Payment Options</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Returns</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Privacy Policies</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div class="body-footer__column">
+							<div class="body-footer__title">Newsletter</div>
+							<form class="body-footer__form" action="files/sendmail/sendmail.php" method="POST">
+								<input type="text" name="form[email]" data-error="Error" placeholder="Enter Your Email Address" class="body-footer__input">
+								<button type="submit" class="body-footer__button">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+					<div class="footer__copy">
+						<div class="footer__text">2023 Meubel House. All rights reverved</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

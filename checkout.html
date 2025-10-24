@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Checkout</title>
+		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1761305898455"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="modulepreload" crossorigin="" href="./js/radio.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761305898455">
+		<link rel="stylesheet" crossorigin="" href="./css/radio.min.css?v=1761305898455">
+		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1761305898455">
+		<link rel="stylesheet" crossorigin="" href="./css/headernavigation.min.css?v=1761305898455">
+	</head>
+	<body data-fls-watcher="">
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Home</a>
+								</li>
+								<li class="menu__item">
+									<a href="shop.html" class="menu__link">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="blog.html" class="menu__link">Blog</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link">Contacts</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+					<div class="header__action">
+						<div class="header__cart">
+							<button type="button" data-fls-popup-link="popup" class="header__action--icon --icon-cart"></button>
+							<span class="cart__quantity" data-fls-addtocart="">1</span>
+						</div>
+						<button type="button" data-fls-popup-link="heart" class="header__action--icon --icon-heart"></button>
+						<button type="button" data-fls-popup-link="search" class="header__action--icon --icon-search"></button>
+						<a href="myaccount.html" class="header__action--icon --icon-man"></a>
+					</div>
+				</div>
+				<div data-fls-popup="search" aria-hidden="true" class="search">
+					<div data-fls-search-wrapper="" class="search__wrapper">
+						<div data-fls-search-body="" class="search__body">
+							<div class="search__header">
+								<h2 class="search__title">Search</h2>
+								<button data-fls-popup-close="" class="search__close --icon-close-circle-svgrepo-com"></button>
+							</div>
+							<form class="search__form">
+								<input data-fls-input="" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="" class="search__input">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="popup" aria-hidden="true" class="popup">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<div class="popup__header">
+								<h2 class="popup__title">Shopping Cart</h2>
+								<button data-fls-popup-close="" type="button" class="popup__close --icon-cart-close"></button>
+							</div>
+							<div data-fls-popup-content="" class="popup__items">
+								<div class="popup__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<div class="popup__end-price">
+								<span class="popup__end-price_title">Subtotal</span>
+								<span class="popup__end-price_price">Rs. 250,000.00</span>
+							</div>
+							<div class="popup__bottom">
+								<a href="cartbox.html">View Cart</a>
+								<a href="checkout.html">Checkout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="heart" aria-hidden="true" class="heart">
+					<div data-fls-popup-wrapper="" class="heart__wrapper">
+						<div data-fls-popup-body="" class="heart__body">
+							<div class="heart__header">
+								<h2 class="heart__title">My Favorite</h2>
+								<button type="button" data-fls-popup-close="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="19" height="19">
+										<path d="M12 21s-6-4-9-8c-2-3 0-7 3-8s6 1 6 1 3-2 6-1 5 5 3 8c-3 4-9 8-9 8z" fill="none" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										<line x1="9" y1="9" x2="15" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+										<line x1="15" y1="9" x2="9" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+									</svg>
+								</button>
+							</div>
+							<div data-fls-popup-content="" class="heart__items">
+								<div class="heart__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<a href="#" class="heart__button">Add to cart</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div data-fls-headernavigation="" class="navigation">
+				<div class="navigation__container">
+					<div class="navigation__body">
+						<a href="index.html" class="navigation__logo">
+							<img src="./assets/img/logo.svg" alt="Image">
+						</a>
+						<h2 class="navigation__title">Checkout</h2>
+						<div class="navigation__links">
+							<a href="index.html" class="navigation__link --icon-arrow">Home</a>
+							<a href="javascript:void(0)" class="navigation__link--active">Checkout</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<main class="checkout">
+				<div class="checkout__container">
+					<form class="checkout__form" action="files/sendmail/sendmail.php" method="POST">
+						<div class="checkout__inputs">
+							<h3 class="checkout__title">Billing details</h3>
+							<div class="checkout__fullname">
+								<div class="checkout__input-block">
+									<label class="checkout__label">First Name</label>
+									<input type="text" data-error="Error" class="checkout__input">
+								</div>
+								<div class="checkout__input-block">
+									<label class="checkout__label">Last Name</label>
+									<input type="text" data-error="Error" class="checkout__input">
+								</div>
+							</div>
+							<div class="checkout__input-block">
+								<p class="checkout__label">Country / Region</p>
+								<select class="checkout__select" name="form[]" data-fls-select="" data-fls-select-modif="form">
+									<option value="1" selected>Sri Lanka</option>
+									<option value="2">USA</option>
+									<option value="3">Canada</option>
+									<option value="4">Germany</option>
+								</select>
+							</div>
+							<div class="checkout__input-block">
+								<label class="checkout__label">Street address</label>
+								<input type="text" data-error="Error" class="checkout__input">
+							</div>
+							<div class="checkout__input-block">
+								<label class="checkout__label">Town / City</label>
+								<input type="text" data-error="Error" class="checkout__input">
+							</div>
+							<div class="checkout__input-block">
+								<p class="checkout__label">Province</p>
+								<select name="form[]" data-fls-select="" data-fls-select-modif="form">
+									<option value="1" selected>Western Province</option>
+									<option value="2">USA</option>
+									<option value="3">Canada</option>
+									<option value="4">Germany</option>
+								</select>
+							</div>
+							<div class="checkout__input-block">
+								<label class="checkout__label">ZIP code</label>
+								<input type="text" data-error="Error" class="checkout__input">
+							</div>
+							<div class="checkout__input-block">
+								<label class="checkout__label">Phone</label>
+								<input type="tel" required data-error="Error" class="checkout__input">
+							</div>
+							<div class="checkout__input-block">
+								<label class="checkout__label">Email address</label>
+								<input type="text" name="form[email]" data-error="Error" placeholder="E-mail" class="checkout__input">
+							</div>
+							<div class="checkout__input-block">
+								<input type="text" name="form[email]" placeholder="Additional information" data-error="Error" class="checkout__input">
+							</div>
+						</div>
+						<div class="checkout__product checkout-product">
+							<div class="checkout-product__header">
+								<ul class="checkout-product__list">
+									<li class="checkout-product__item checkout-product__item_title">Product</li>
+									<li class="checkout-product__item checkout-product__item_name">
+										Asgaard sofa
+										<b>X</b>
+										<span>1</span>
+									</li>
+									<li class="checkout-product__item">Subtotal</li>
+									<li class="checkout-product__item">Total</li>
+								</ul>
+								<ul class="checkout-product__list">
+									<li class="checkout-product__item checkout-product__item_title">Subtotal</li>
+									<li class="checkout-product__item checkout-product__item_subtotal-text">Rs. 250,000.00</li>
+									<li class="checkout-product__item checkout-product__item_subtotal-text">Rs. 250,000.00</li>
+									<li class="checkout-product__item checkout-product__item_total">Rs. 250,000.00</li>
+								</ul>
+							</div>
+							<div class="checkout__info">
+								<div data-fls-radio="" class="options">
+									<div class="options__block">
+										<label class="options__item">
+											<input class="options__input" checked type="radio" value="1" name="option">
+											<span class="options__text">Direct Bank Transfer</span>
+										</label>
+										<div class="options__info-text">
+											Make your payment directly into our bank account. Please use your Order ID as the
+                                payment reference. Your order will not be shipped until the funds have cleared in our
+                                account.
+										</div>
+									</div>
+									<div class="options__block">
+										<label class="options__item">
+											<input class="options__input" checked type="radio" value="2" name="option">
+											<span class="options__text">Cash On Delivery</span>
+										</label>
+										<div class="options__info-text">
+											Your personal data will be used to support your experience throughout this website, to
+                                manage access to your account, and for other purposes described in our privacy policy.
+										</div>
+									</div>
+								</div>
+								<button type="submit" class="checkout__button">Place order</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__top">
+					<div class="footer__container">
+						<div class="footer__advantages advantages">
+							<div class="advantages__column">
+								<div class="advantages__title">Free Delivery</div>
+								<p class="advantages__text">For all oders over $50, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">90 Days Return</div>
+								<p class="advantages__text">If goods have problems, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">Secure Payment</div>
+								<p class="advantages__text">100% secure payment, consectetur adipim scing elit.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__container">
+					<div class="footer__body body-footer">
+						<a href="#" class="body-footer__logo"></a>
+						<div class="body-footer__column">
+							<p class="body-footer__about">400 University Drive Suite 200 Coral Gables,
+					FL 33134 USA</p>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Links</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Home</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Shop</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">About</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Contact</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Help</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Payment Options</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Returns</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Privacy Policies</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div class="body-footer__column">
+							<div class="body-footer__title">Newsletter</div>
+							<form class="body-footer__form" action="files/sendmail/sendmail.php" method="POST">
+								<input type="text" name="form[email]" data-error="Error" placeholder="Enter Your Email Address" class="body-footer__input">
+								<button type="submit" class="body-footer__button">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+					<div class="footer__copy">
+						<div class="footer__text">2023 Meubel House. All rights reverved</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Single Product</title>
+		<script type="module" crossorigin="" src="./js/SingleProduct.min.js?v=1761305898454"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="modulepreload" crossorigin="" href="./js/cart.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761305898454">
+		<link rel="stylesheet" crossorigin="" href="./css/cart.min.css?v=1761305898454">
+		<link rel="stylesheet" crossorigin="" href="./css/SingleProduct.min.css?v=1761305898454">
+		<link rel="stylesheet" crossorigin="" href="./css/viewmore.min.css?v=1761305898454">
+	</head>
+	<body data-fls-watcher="">
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Home</a>
+								</li>
+								<li class="menu__item">
+									<a href="shop.html" class="menu__link menu__link--active">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="blog.html" class="menu__link">Blog</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link">Contacts</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+					<div class="header__action">
+						<div class="header__cart">
+							<button type="button" data-fls-popup-link="popup" class="header__action--icon --icon-cart"></button>
+							<span class="cart__quantity" data-fls-addtocart="">1</span>
+						</div>
+						<button type="button" data-fls-popup-link="heart" class="header__action--icon --icon-heart"></button>
+						<button type="button" data-fls-popup-link="search" class="header__action--icon --icon-search"></button>
+						<a href="myaccount.html" class="header__action--icon --icon-man"></a>
+					</div>
+				</div>
+				<div data-fls-popup="search" aria-hidden="true" class="search">
+					<div data-fls-search-wrapper="" class="search__wrapper">
+						<div data-fls-search-body="" class="search__body">
+							<div class="search__header">
+								<h2 class="search__title">Search</h2>
+								<button data-fls-popup-close="" class="search__close --icon-close-circle-svgrepo-com"></button>
+							</div>
+							<form class="search__form">
+								<input data-fls-input="" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="" class="search__input">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="popup" aria-hidden="true" class="popup">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<div class="popup__header">
+								<h2 class="popup__title">Shopping Cart</h2>
+								<button data-fls-popup-close="" type="button" class="popup__close --icon-cart-close"></button>
+							</div>
+							<div data-fls-popup-content="" class="popup__items">
+								<div class="popup__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<div class="popup__end-price">
+								<span class="popup__end-price_title">Subtotal</span>
+								<span class="popup__end-price_price">Rs. 250,000.00</span>
+							</div>
+							<div class="popup__bottom">
+								<a href="cartbox.html">View Cart</a>
+								<a href="checkout.html">Checkout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="heart" aria-hidden="true" class="heart">
+					<div data-fls-popup-wrapper="" class="heart__wrapper">
+						<div data-fls-popup-body="" class="heart__body">
+							<div class="heart__header">
+								<h2 class="heart__title">My Favorite</h2>
+								<button type="button" data-fls-popup-close="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="19" height="19">
+										<path d="M12 21s-6-4-9-8c-2-3 0-7 3-8s6 1 6 1 3-2 6-1 5 5 3 8c-3 4-9 8-9 8z" fill="none" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										<line x1="9" y1="9" x2="15" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+										<line x1="15" y1="9" x2="9" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+									</svg>
+								</button>
+							</div>
+							<div data-fls-popup-content="" class="heart__items">
+								<div class="heart__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<a href="#" class="heart__button">Add to cart</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="single">
+				<section class="single__container">
+					<nav class="single__nav">
+						<a href="index.html" class="single__link --icon-arrow">Home</a>
+						<a href="shop.html" class="single__link --icon-arrow">Shop</a>
+						<span class="single__link--active">Asgaard sofa</span>
+					</nav>
+					<div class="single__body">
+						<div class="single__swipers">
+							<div data-fls-slider="" class="single__slider-smal swiper">
+								<div class="single__wrapper-smal swiper-wrapper">
+									<div class="single__slide-smal swiper-slide">
+										<div class="single__slide-smal-body">
+											<picture>
+												<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="single__slide-smal swiper-slide">
+										<div class="single__slide-smal-body">
+											<picture>
+												<img alt="Image" src="./assets/img/singl/singl-small-02.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="single__slide-smal swiper-slide">
+										<div class="single__slide-smal-body">
+											<picture>
+												<img alt="Image" src="./assets/img/singl/singl-small-03.webp">
+											</picture>
+										</div>
+									</div>
+									<div class="single__slide-smal swiper-slide">
+										<div class="single__slide-smal-body">
+											<picture>
+												<img alt="Image" src="./assets/img/singl/singl-small-04.webp">
+											</picture>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div data-fls-slider="" class="single__slider-main swiper">
+								<div class="single__wrapper-main swiper-wrapper">
+									<div class="single__slide-main swiper-slide">
+										<picture>
+											<img alt="Image" src="./assets/img/shop/12.webp">
+										</picture>
+									</div>
+									<div class="single__slide-main swiper-slide">
+										<picture>
+											<img alt="Image" src="./assets/img/shop/10.webp">
+										</picture>
+									</div>
+									<div class="single__slide-main swiper-slide">
+										<picture>
+											<img alt="Image" src="./assets/img/shop/11.webp">
+										</picture>
+									</div>
+									<div class="single__slide-main swiper-slide">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-04.webp">
+										</picture>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="single__info info">
+							<div class="info__body">
+								<h2 class="info__title">Asgaard sofa</h2>
+								<div class="info__price">$1,999.00</div>
+								<div class="info__rating-body">
+									<div data-fls-rating="set" data-fls-rating-value="4.5" class="info__rating-body_rating rating"></div>
+									<div class="info__rating-body_review">5 Customer Review</div>
+								</div>
+								<div class="info__text">
+									Setting the bar as one of the loudest speakers in its class, the Kilburn is
+                        a
+                        compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and
+                        extended
+                        highs for a sound.
+								</div>
+								<div class="info__size">Size</div>
+								<div class="info__sizes sizes">
+									<button type="button" class="--active sizes__item">S</button>
+									<button type="button" class="sizes__item">M</button>
+									<button type="button" class="sizes__item">L</button>
+								</div>
+								<div class="info__color">Color</div>
+								<div class="info__colors colors">
+									<button type="button" class="--active colors__item"></button>
+									<button type="button" class="colors__item"></button>
+									<button type="button" class="colors__item"></button>
+								</div>
+								<div data-fls-addtocart-product="" class="info__form form product">
+									<span data-fls-addtocart-image=""></span>
+									<div data-fls-quantity="" class="quantity">
+										<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+										<div class="quantity__input">
+											<input data-fls-addtocart-quantity="" data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+										</div>
+										<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+									</div>
+									<button data-fls-addtocart-button="" class="form__btn btn">Add to cart</button>
+								</div>
+							</div>
+							<ul class="info__parameters parameters">
+								<li class="parameters__parameter">
+									SKU
+									<span>:</span>
+									MS-01
+								</li>
+								<li class="parameters__parameter">
+									Category
+									<span>:</span>
+									Sofas
+								</li>
+								<li class="parameters__parameter">
+									Tags
+									<span>:</span>
+									Sofa, Chair, Home, Shop
+								</li>
+								<li class="parameters__parameter">
+									Share
+									<span>:</span>
+									<div class="parameters__social-links">
+										<a href="#" class="--icon-facebook"></a>
+										<a href="#" class="--icon-in"></a>
+										<a href="#" class="--icon-x"></a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<div class="description-block">
+					<div class="description__container">
+						<div data-fls-tabs="" class="description">
+							<nav data-fls-tabs-titles="" class="description__navigation">
+								<button type="button" class="description__title --tab-active">Description</button>
+								<button type="button" class="description__title">Additional Information</button>
+								<button type="button" class="description__title">Reviews [5]</button>
+							</nav>
+							<div data-fls-tabs-body="" class="description__content">
+								<div class="description__body">
+									<p class="description__text">
+										Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn
+                            portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs
+                            the chords, and takes the show on the road.
+									</p>
+									<p class="description__text">
+										Weighing in under 7 pounds, the Kilburn is a lightweight piece of
+                            vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the
+                            Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear
+                            midrange and extended highs for a sound that is both articulate and pronounced. The analogue
+                            knobs allow you to fine tune the controls to your personal preferences while the
+                            guitar-influenced leather strap enables easy and stylish travel.
+									</p>
+									<div class="description__images">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/tabs/01.webp">
+										</picture>
+										<picture>
+											<img alt="Image" src="./assets/img/singl/tabs/02.webp">
+										</picture>
+									</div>
+								</div>
+								<div class="description__body">
+									<p class="description__text">
+										Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn
+                            portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs
+                            the chords, and takes the show on the road.
+									</p>
+									<p class="description__text">
+										Weighing in under 7 pounds, the Kilburn is a lightweight piece of
+                            vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the
+                            Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear
+                            midrange and extended highs for a sound that is both articulate and pronounced. The analogue
+                            knobs allow you to fine tune the controls to your personal preferences while the
+                            guitar-influenced leather strap enables easy and stylish travel.
+									</p>
+								</div>
+								<div class="description__body">
+									<p class="description__text">
+										Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn
+                            portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs
+                            the chords, and takes the show on the road.
+									</p>
+									<p class="description__text">
+										Weighing in under 7 pounds, the Kilburn is a lightweight piece of
+                            vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the
+                            Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear
+                            midrange and extended highs for a sound that is both articulate and pronounced. The analogue
+                            knobs allow you to fine tune the controls to your personal preferences while the
+                            guitar-influenced leather strap enables easy and stylish travel.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<section class="single__related related">
+					<div class="related__container">
+						<h2 class="related__title">Related Products</h2>
+						<div class="related__colums">
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/picks/01.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/picks/02.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/picks/03.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/picks/04.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+						</div>
+						<div data-fls-viewmore="" class="viewmore viewmore--center">
+							<a href="javscript:void(0)" class="viewmore__title">View More</a>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__top">
+					<div class="footer__container">
+						<div style="display: none;" class="footer__advantages advantages"></div>
+					</div>
+				</div>
+				<div class="footer__container">
+					<div class="footer__body body-footer">
+						<a href="#" class="body-footer__logo"></a>
+						<div class="body-footer__column">
+							<p class="body-footer__about">400 University Drive Suite 200 Coral Gables,
+					FL 33134 USA</p>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Links</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Home</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Shop</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">About</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Contact</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Help</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Payment Options</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Returns</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Privacy Policies</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div class="body-footer__column">
+							<div class="body-footer__title">Newsletter</div>
+							<form class="body-footer__form" action="files/sendmail/sendmail.php" method="POST">
+								<input type="text" name="form[email]" data-error="Error" placeholder="Enter Your Email Address" class="body-footer__input">
+								<button type="submit" class="body-footer__button">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+					<div class="footer__copy">
+						<div class="footer__text">2023 Meubel House. All rights reverved</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

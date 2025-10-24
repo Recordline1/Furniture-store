@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Shop</title>
+		<script type="module" crossorigin="" src="./js/shop.min.js?v=1761305898451"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="modulepreload" crossorigin="" href="./js/radio.min.js">
+		<link rel="modulepreload" crossorigin="" href="./js/cart.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761305898451">
+		<link rel="stylesheet" crossorigin="" href="./css/radio.min.css?v=1761305898451">
+		<link rel="stylesheet" crossorigin="" href="./css/cart.min.css?v=1761305898451">
+		<link rel="stylesheet" crossorigin="" href="./css/shop.min.css?v=1761305898451">
+		<link rel="stylesheet" crossorigin="" href="./css/headernavigation.min.css?v=1761305898451">
+	</head>
+	<body data-fls-watcher="">
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
+				<div class="header__container">
+					<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+						<span></span>
+					</button>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Home</a>
+								</li>
+								<li class="menu__item">
+									<a href="shop.html" class="menu__link menu__link--active">Shop</a>
+								</li>
+								<li class="menu__item">
+									<a href="blog.html" class="menu__link">Blog</a>
+								</li>
+								<li class="menu__item">
+									<a href="contact.html" class="menu__link">Contacts</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+					<div class="header__action">
+						<div class="header__cart">
+							<button type="button" data-fls-popup-link="popup" class="header__action--icon --icon-cart"></button>
+							<span class="cart__quantity" data-fls-addtocart="">1</span>
+						</div>
+						<button type="button" data-fls-popup-link="heart" class="header__action--icon --icon-heart"></button>
+						<button type="button" data-fls-popup-link="search" class="header__action--icon --icon-search"></button>
+						<a href="myaccount.html" class="header__action--icon --icon-man"></a>
+					</div>
+				</div>
+				<div data-fls-popup="search" aria-hidden="true" class="search">
+					<div data-fls-search-wrapper="" class="search__wrapper">
+						<div data-fls-search-body="" class="search__body">
+							<div class="search__header">
+								<h2 class="search__title">Search</h2>
+								<button data-fls-popup-close="" class="search__close --icon-close-circle-svgrepo-com"></button>
+							</div>
+							<form class="search__form">
+								<input data-fls-input="" autocomplete="off" type="text" name="form[]" data-error="Помилка" placeholder="" class="search__input">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="popup" aria-hidden="true" class="popup">
+					<div data-fls-popup-wrapper="" class="popup__wrapper">
+						<div data-fls-popup-body="" class="popup__body">
+							<div class="popup__header">
+								<h2 class="popup__title">Shopping Cart</h2>
+								<button data-fls-popup-close="" type="button" class="popup__close --icon-cart-close"></button>
+							</div>
+							<div data-fls-popup-content="" class="popup__items">
+								<div class="popup__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<div class="popup__end-price">
+								<span class="popup__end-price_title">Subtotal</span>
+								<span class="popup__end-price_price">Rs. 250,000.00</span>
+							</div>
+							<div class="popup__bottom">
+								<a href="cartbox.html">View Cart</a>
+								<a href="checkout.html">Checkout</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="heart" aria-hidden="true" class="heart">
+					<div data-fls-popup-wrapper="" class="heart__wrapper">
+						<div data-fls-popup-body="" class="heart__body">
+							<div class="heart__header">
+								<h2 class="heart__title">My Favorite</h2>
+								<button type="button" data-fls-popup-close="">
+									<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="19" height="19">
+										<path d="M12 21s-6-4-9-8c-2-3 0-7 3-8s6 1 6 1 3-2 6-1 5 5 3 8c-3 4-9 8-9 8z" fill="none" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										<line x1="9" y1="9" x2="15" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+										<line x1="15" y1="9" x2="9" y2="15" stroke="#9f9f9f" stroke-width="1.5" stroke-linecap="round"></line>
+									</svg>
+								</button>
+							</div>
+							<div data-fls-popup-content="" class="heart__items">
+								<div class="heart__item item-popup">
+									<div class="item-popup__image">
+										<picture>
+											<img alt="Image" src="./assets/img/singl/singl-small-01.webp">
+										</picture>
+									</div>
+									<div class="item-popup__body">
+										<h3 class="item-popup__body_title">Asgaard sofa</h3>
+										<div class="item-popup__body_count">
+											<div data-fls-quantity="" class="item-popup__body_quantity quantity">
+												<button data-fls-quantity-minus="" type="button" class="quantity__button quantity__button--minus"></button>
+												<div class="quantity__input">
+													<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1">
+												</div>
+												<button data-fls-quantity-plus="" type="button" class="quantity__button quantity__button--plus"></button>
+											</div>
+											<div class="item-popup__body_price">Rs. 250,000.00</div>
+										</div>
+									</div>
+									<button class="item-popup__close --icon-close-circle-svgrepo-com"></button>
+								</div>
+							</div>
+							<a href="#" class="heart__button">Add to cart</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div data-fls-headernavigation="" class="navigation">
+				<div class="navigation__container">
+					<div class="navigation__body">
+						<a href="index.html" class="navigation__logo">
+							<img src="./assets/img/logo.svg" alt="Image">
+						</a>
+						<h2 class="navigation__title">Shop</h2>
+						<div class="navigation__links">
+							<a href="index.html" class="navigation__link --icon-arrow">Home</a>
+							<a href="javascript:void(0)" class="navigation__link--active">Shop</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<main class="shop">
+				<div class="filter shop--filter">
+					<div class="filter__container">
+						<div class="filter__actions actions">
+							<div class="actions__buttons">
+								<button data-fls-popup-link="filter" type="button" class="actions__icon--filter --icon-filtr">Filter</button>
+								<button type="button" class="actions__icon --icon-sort"></button>
+								<button type="button" class="actions__icon --icon-sort-line"></button>
+							</div>
+							<div class="actions__views-item">Showing 1–16 of 32 results</div>
+						</div>
+						<div class="filter__sort sort">
+							<form action="" method="get" class="sort__form">
+								<div class="sort__form-section">
+									<span class="sort__label">Show:</span>
+									<select name="form[]" data-type="show" data-fls-select="" data-fls-select-modif="form">
+										<option value="8">8</option>
+										<option value="16" selected>16</option>
+										<option value="32">32</option>
+									</select>
+								</div>
+								<div class="sort__form-section">
+									<span class="sort__label">Sort By:</span>
+									<select name="form[]" data-type="sort" data-fls-select="" data-fls-select-modif="form">
+										<option value="1" selected>Default</option>
+										<option value="2">High to Low</option>
+										<option value="3">Low to High</option>
+										<option value="4">A to Z</option>
+										<option value="4">Z to A</option>
+									</select>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="cards shop--cards">
+					<div class="cards__container">
+						<div class="cards__body">
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/01.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/02.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/03.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/04.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/05.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/06.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/07.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/08.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/09.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/10.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/11.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/12.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/13.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/14.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/15.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+							<div data-fls-addtocart-product="" data-fls-cart="" class="cart">
+								<a href="SingleProduct.html" class="cart__image">
+									<picture>
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/shop/01.webp">
+									</picture>
+								</a>
+								<div class="cart__body">
+									<a href="SingleProduct.html" class="cart__title">Trenton Modular Sofa</a>
+									<a href="javascript:void(0)" data-fls-addtocart-button="" class="cart__cart --icon-cart"></a>
+									<div class="cart__price">Rs. 25,000.00</div>
+								</div>
+								<div data-fls-rating="set" class="cart__rating rating"></div>
+								<button class="cart__heart --icon-heart"></button>
+							</div>
+						</div>
+						<div class="cards__cout-pages">
+							<span class="--active">1</span>
+							<span>2</span>
+							<span>3</span>
+							<span>...</span>
+						</div>
+					</div>
+				</div>
+				<div data-fls-popup="filter" aria-hidden="true" class="filter">
+					<div data-fls-filter-wrapper="" class="filter__wrapper">
+						<div data-fls-search-body="" class="filter__body">
+							<div class="filter__header">
+								<h3 class="filter__title">Filters</h3>
+								<button data-fls-popup-close="" type="button" class="filter__close --icon-close-circle-svgrepo-com"></button>
+							</div>
+							<form class="filter__content">
+								<div class="filter__section">
+									<select name="form[]" data-fls-select="" data-fls-select-modif="form">
+										<option value="1" selected>Categories</option>
+										<option value="2">Sofas</option>
+										<option value="3">Chairs</option>
+										<option value="4">Tables</option>
+										<option value="4">Wardrobe</option>
+									</select>
+								</div>
+								<div class="filter__section">
+									<div data-fls-range="" class="range"></div>
+									<div class="range__inputs">
+										<div class="range__input-body">
+											<input type="number" data-fls-range-from="" value="20000">
+										</div>
+										<div class="range__input-body">
+											<input type="number" data-fls-range-to="" value="100000">
+										</div>
+									</div>
+								</div>
+								<div class="filter__section color">
+									<h3 class="color__title">Color</h3>
+									<div data-fls-radio="" class="options">
+										<label class="options__item">
+											<input class="options__input" checked type="radio" value="1" name="option">
+											<span class="options__text options__text_1">violet</span>
+										</label>
+										<label class="options__item">
+											<input class="options__input" type="radio" value="2" name="option">
+											<span class="options__text options__text_2">Black</span>
+										</label>
+										<label class="options__item">
+											<input class="options__input" type="radio" value="2" name="option">
+											<span class="options__text options__text_3">Yellow</span>
+										</label>
+									</div>
+								</div>
+								<div class="filter__section">
+									<select name="form[]" data-fls-select="" data-fls-select-modif="form">
+										<option value="1" selected>Size</option>
+										<option value="2">S</option>
+										<option value="3">M</option>
+										<option value="4">L</option>
+									</select>
+								</div>
+								<div class="filter__footer">
+									<button type="button" class="filter__reset">Reset All</button>
+									<button type="button" class="filter__apply btn">Apply Filters</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__top">
+					<div class="footer__container">
+						<div class="footer__advantages advantages">
+							<div class="advantages__column">
+								<div class="advantages__title">Free Delivery</div>
+								<p class="advantages__text">For all oders over $50, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">90 Days Return</div>
+								<p class="advantages__text">If goods have problems, consectetur adipim scing elit.</p>
+							</div>
+							<div class="advantages__column">
+								<div class="advantages__title">Secure Payment</div>
+								<p class="advantages__text">100% secure payment, consectetur adipim scing elit.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__container">
+					<div class="footer__body body-footer">
+						<a href="#" class="body-footer__logo"></a>
+						<div class="body-footer__column">
+							<p class="body-footer__about">400 University Drive Suite 200 Coral Gables,
+					FL 33134 USA</p>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Links</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Home</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Shop</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">About</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Contact</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div data-fls-spollers="767.98" class="body-footer__column">
+							<details class="spollers__item">
+								<summary class="body-footer__title spollers__title">Help</summary>
+								<ul class="body-footer__list">
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Payment Options</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Returns</a>
+									</li>
+									<li body-footer__item="">
+										<a href="#" class="body-footer__link">Privacy Policies</a>
+									</li>
+								</ul>
+							</details>
+						</div>
+						<div class="body-footer__column">
+							<div class="body-footer__title">Newsletter</div>
+							<form class="body-footer__form" action="files/sendmail/sendmail.php" method="POST">
+								<input type="text" name="form[email]" data-error="Error" placeholder="Enter Your Email Address" class="body-footer__input">
+								<button type="submit" class="body-footer__button">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+					<div class="footer__copy">
+						<div class="footer__text">2023 Meubel House. All rights reverved</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
