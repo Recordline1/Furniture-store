@@ -1,0 +1,9 @@
+export const formatDate = (dateInput: string | number | Date) => {
+  const date = new Date(dateInput); 
+
+  return date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric"
+  });
+};
