@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect, use, } from 'react';
+import { useState, useEffect, } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { checkoutSchema, CheckoutFormValues } from '../model/checkoutSchema';
 import { useCartStore } from '@/entities/cart/model/useCartStore';
-import { createOrder } from '../api/checkout';
+import { placeOrderAction } from '../api/actions';
 import { sendTelegramMessage } from '../api/sendTelegramMessage';
 
 
@@ -52,13 +52,25 @@ export const CheckoutForm = () => {
   const onSubmit = async (data: CheckoutFormValues) => {
     try {
 
-      await createOrder(data, items, getTotalPrice());
-      sendTelegramMessage(data, items, getTotalPrice());
-      setIsSuccess(true);
-      clearCart();
+      const response = await placeOrderAction(data, items);
+
+      if (response.error) {
+        console.error('Error creating order:', response.error);
+        alert('An error occurred while placing your order.' + response.error);
+        return;
+      }
+      if (response.success && response.orderId) {
+
+        sendTelegramMessage(data, items, getTotalPrice(), response.orderId);
+        setIsSuccess(true);
+        clearCart();
+        if (data.payment === 'card') {
+          console.log('Redirect to order payment:', response.orderId);
+        }
+      }
     } catch (error) {
-      console.error('Ошибка при создании заказа:', error);
-      alert('Произошла ошибка при оформлении заказа. Попробуйте еще раз.');
+      console.error('Error creating order:', error);
+      alert('An error occurred while placing your order.');
     }
   };
 
@@ -177,7 +189,6 @@ export const CheckoutForm = () => {
             <option value="">Choose a method</option>
             <option value="card">Online Card Payment</option>
             <option value="cash">Cash on Delivery</option>
-            <option value="cod">Cash on Delivery</option>
           </select>
           {errors.payment && <span className="text-xs text-red-500 min-h-[16px]">{errors.payment.message}</span>}
         </div>

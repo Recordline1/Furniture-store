@@ -53,7 +53,7 @@ export const Header = ({ user }: { user: any }) => {
 
     return (
         <>
-            <header className=" sticky top-0 z-40 w-full border-b border-gray-200 bg-yellow/70 backdrop-blur-md">
+            <header className=" sticky top-0 z-100 w-full border-b border-gray-200 bg-yellow/70 backdrop-blur-md">
                 <Container className="container mx-auto flex h-16 items-center justify-between px-4">
                     <Link href="/" className="text-xl font-bold tracking-tight text-gray-900">
                         <Logo width={32} height={32} />

@@ -1,11 +1,12 @@
-'use server'; 
+'use server';
 
 import { CheckoutFormValues } from '../model/checkoutSchema';
 
 export const sendTelegramMessage = async (
   data: CheckoutFormValues,
   items: any[],
-  totalPrice: number
+  totalPrice: number,
+  orderId: string
 ) => {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -15,15 +16,15 @@ export const sendTelegramMessage = async (
     return;
   }
 
-  
+
   const itemsList = items
     .map((item) => `▫️ ${item.name} (x${item.quantity}) - Rs. ${item.price.toLocaleString()}`)
     .join('\n');
 
-  
+
   const message = `
 🛒 <b>Новый заказ!</b>
-
+ ID <b>Заказ No${orderId}</b>
 👤 <b>Имя:</b> ${data.fullName}
 📞 <b>Телефон:</b> ${data.phone}
 📧 <b>Email:</b> ${data.email}
@@ -39,7 +40,7 @@ ${itemsList}
 💰 <b>Итого: Rs. ${totalPrice.toLocaleString()}</b>
   `;
 
-  
+
   try {
     const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: 'POST',
@@ -49,7 +50,7 @@ ${itemsList}
       body: JSON.stringify({
         chat_id: chatId,
         text: message,
-        parse_mode: 'HTML', 
+        parse_mode: 'HTML',
       }),
     });
 

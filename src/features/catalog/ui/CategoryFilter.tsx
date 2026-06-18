@@ -82,7 +82,7 @@ export const CategoryFilter = ({ categories, productsCount, totalCount }: Catego
     };
 
     return (
-        <div className="space-y-4 mb-8 relative z-50">
+        <div className="space-y-4 mb-8 relative z-40">
             <div className="rounded-3xl border border-gray-200 bg-white px-4 py-4 shadow-sm">
                 <div className="flex flex-col gap-4 sm:flex-row-reverse sm:items-center xl:justify-between">
 
