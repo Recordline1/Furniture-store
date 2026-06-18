@@ -16,7 +16,7 @@ export const ProductCard = ({ product, view = 'grid' }: ProductCardProps) => {
       default: return 'bg-transparent';
     }
   };
-  const isSale = product.oldPrice && product.oldPrice > product.price;
+  const isSale = product.old_price && product.old_price > product.price;
   return (
     <div className="py-4">
       <div
@@ -61,7 +61,7 @@ export const ProductCard = ({ product, view = 'grid' }: ProductCardProps) => {
               </p>
               {isSale && (
                 <p className="text-sm text-gray-500 line-through">
-                  Rs. {product.oldPrice?.toLocaleString()}
+                  Rs. {product.old_price?.toLocaleString()}
                 </p>
               )}
             </div>

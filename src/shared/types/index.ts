@@ -2,7 +2,7 @@ export interface FurnitureProduct {
   id: string;
   name: string;
   price: number;
-  oldPrice?: number;
+  old_price?: number;
   image_url: string;
   slug: string;
   description?: string;
