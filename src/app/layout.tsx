@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { createClient } from "@/shared/api/server";
 import { QueryProvider } from "@/app/providers/QueryProvider";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/widgets/Header/ui/Header";
-import { Footer } from "@widgets/footer/ui/Footer";
+
 
 const geistSans = Poppins({
   subsets: ["latin"],
@@ -25,9 +23,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const supabase = await createClient();
 
-  const { data: { user } } = await supabase.auth.getUser();
 
   return (
     <html
@@ -35,12 +31,8 @@ export default async function RootLayout({
       className={`${geistSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <QueryProvider>
-          <Header user={user} />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
+        <QueryProvider>    
+            {children}    
         </QueryProvider>
       </body>
     </html>

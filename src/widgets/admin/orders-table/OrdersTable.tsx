@@ -6,7 +6,7 @@ import { StatusSelect } from '@features/admin/ui/StatusSelect';
 export const OrdersTable = () => {
     const { data: orders, isLoading, error } = useOrders();
 
-    if (isLoading) return <div>Загрузка заказов...</div>;
+    if (isLoading) return <div>Loading orders...</div>;
     if (error) return <div>Ошибка загрузки: {error.message}</div>;
 
     return (

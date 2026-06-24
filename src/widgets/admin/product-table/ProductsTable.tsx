@@ -13,7 +13,7 @@ export const ProductsTable = () => {
     const { data: products, isLoading, error } = useProducts();
 
     return (
-        <>
+        <div className="overflow-x-auto">
             {isLoading && <div>Loading products...</div>}
             {error && <div>error: {error.message}</div>}
             <table className="w-full">
@@ -62,6 +62,6 @@ export const ProductsTable = () => {
                 onClose={() => setEditingProduct(null)}
                 product={editingProduct}
             />
-        </>
+        </div>
     );
 };

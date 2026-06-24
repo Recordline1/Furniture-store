@@ -73,7 +73,7 @@ export const Header = ({ user }: { user: any }) => {
 
                     <div className="flex items-center gap-4">
                         <Link href={currentUser ? '/profile' : '/auth'} >
-                            {currentUser ? <p className="text-sm font-medium ">Hello {user.email}</p> : <AccountIcon />}
+                            {currentUser ? <p className="text-sm font-medium ">{user.email}</p> : <AccountIcon />}
                         </Link>
 
                         <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="text-sm font-medium hover:text-gray-600 cursor-pointer">
