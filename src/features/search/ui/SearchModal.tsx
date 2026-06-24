@@ -34,11 +34,11 @@ export const SearchModal = ({ isSearchOpen, onClose }: SearchModalProps) => {
     if (!isSearchOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-start bg-yellow/50 backdrop-blur-md pt-20 px-4 animate-in fade-in duration-200">
-            <div className="max-w-xl w-full  p-4">
+        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-start bg-black/50 pt-20 px-4 animate-in fade-in duration-200">
+            <div className="relative border border-gray-300 md:max-w-1/2 rounded-xl w-full  p-4 bg-yellow/80 backdrop-blur-md">
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 p-2 text-gray-900 hover:bg-black/10 rounded-full"
+                    className="absolute top-0 right-0  text-gray-900 hover:bg-black/10 rounded-full"
                 >
                     <CloseIcon width={30} height={30} />
                 </button>
@@ -49,7 +49,7 @@ export const SearchModal = ({ isSearchOpen, onClose }: SearchModalProps) => {
                         autoFocus
                         type="text"
                         placeholder="search ..."
-                        className="w-full bg-transparent border-b-2 border-gray-900 pb-2 text-xl font-medium placeholder:text-gray-900/50 outline-none text-gray-900"
+                        className="w-full bg-transparent border-b-2 border-gray-900 pb-2 pr-4 text-xl font-medium placeholder:text-gray-900/50 outline-none text-gray-900"
                         onKeyDown={(e) => {
                             if (e.key === 'Escape') onClose();
                         }}

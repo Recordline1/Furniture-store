@@ -1,11 +1,13 @@
 import { createClient } from '@/shared/api/server';
+import Link from 'next/link';
+import { LayoutDashboard } from 'lucide-react';
 import { LogoutButton } from "@/features/logout-button/ui/LogoutButton";
-import { PackageIcon, UserIcon, MapPinIcon } from 'lucide-react'; 
+import { PackageIcon, UserIcon, MapPinIcon } from 'lucide-react';
 
 export default async function ProfilePage() {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
-    
+
     if (!user) return <p>Redirecting...</p>;
 
     const [profileResult, ordersResult] = await Promise.all([
@@ -23,7 +25,7 @@ export default async function ProfilePage() {
             <h1 className="text-3xl font-bold mb-8 text-gray-900">My account</h1>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-                
+
                 <aside className="col-span-1">
                     <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 mb-4 flex flex-col items-center">
                         <div className="w-24 h-24 bg-black text-white rounded-full flex items-center justify-center text-3xl font-bold mb-4">
@@ -31,18 +33,29 @@ export default async function ProfilePage() {
                         </div>
                         <h2 className="text-xl font-semibold text-center">{profile?.full_name || 'No name'}</h2>
                         <p className="text-sm text-gray-500 text-center mb-6">{user.email}</p>
-                        
+
                         <div className="w-full border-t border-gray-100 pt-4">
                             <LogoutButton />
                         </div>
+                        {profile?.role === 'admin' && (
+                            <div className="w-full border-t border-gray-100 mt-4 pt-4">
+                                <Link
+                                    href="/admin"
+                                    className="flex items-center gap-3 w-full p-3 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-xl transition-colors"
+                                >
+                                    <LayoutDashboard size={18} />
+                                    Admin Panel
+                                </Link>
+                            </div>
+                        )}
                     </div>
                 </aside>
 
                 <div className="col-span-1 lg:col-span-3 flex flex-col gap-6">
-                    
+
                     <section className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
                         <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                            <UserIcon className="text-gray-400" size={24} /> 
+                            <UserIcon className="text-gray-400" size={24} />
                             Personal data
                         </h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -56,13 +69,28 @@ export default async function ProfilePage() {
                             </div>
                         </div>
                     </section>
+                    {profile?.role === 'admin' && (
+                        <section className="bg-gradient-to-br from-indigo-600 to-blue-700 p-8 rounded-3xl shadow-lg text-white mb-6">
+                            <h3 className="text-lg font-semibold mb-4 opacity-90">Quick Sales Stats</h3>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                <div className="bg-white/10 p-4 rounded-2xl">
+                                    <p className="text-xs opacity-75 uppercase">Total Revenue</p>
+                                    <p className="text-2xl font-bold">$12,450</p>
+                                </div>
+                                <div className="bg-white/10 p-4 rounded-2xl">
+                                    <p className="text-xs opacity-75 uppercase">New Orders</p>
+                                    <p className="text-2xl font-bold">18</p>
+                                </div>
+                            </div>
+                        </section>
+                    )}
 
                     <section className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
                         <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                            <PackageIcon className="text-gray-400" size={24} /> 
-                           Order history
+                            <PackageIcon className="text-gray-400" size={24} />
+                            Order history
                         </h3>
-                        
+
                         {orders.length > 0 ? (
                             <div className="flex flex-col gap-4">
                                 {orders.map(order => (
@@ -93,7 +121,7 @@ export default async function ProfilePage() {
                         )}
                     </section>
                 </div>
-                
+
             </div>
         </main>
     );

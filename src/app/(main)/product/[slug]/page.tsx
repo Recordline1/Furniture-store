@@ -5,8 +5,6 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
 
-
-
 export async function generateMetadata({ 
   params 
 }: { 

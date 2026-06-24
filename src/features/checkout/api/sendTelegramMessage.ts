@@ -55,9 +55,9 @@ ${itemsList}
     });
 
     if (!response.ok) {
-      console.error('Ошибка при отправке в Telegram:', await response.text());
+      console.error('Error sending to Telegram:', await response.text());
     }
   } catch (error) {
-    console.error('Сбой сети при отправке в Telegram:', error);
+    console.error('Network failure while sending to Telegram:', error);
   }
 };

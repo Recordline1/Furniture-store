@@ -96,6 +96,7 @@ export const CheckoutForm = () => {
       >
 
         <p className="text-sm font-medium text-gray-500 tracking-wider mb-4 uppercase">Contact Information</p>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <div className="flex flex-col gap-1">
             <label className="text-sm text-gray-600" htmlFor="fullName">Full Name</label>
@@ -107,7 +108,6 @@ export const CheckoutForm = () => {
             />
             {errors.fullName && <span className="text-xs text-red-500 min-h-[16px]">{errors.fullName.message}</span>}
           </div>
-
           <div className="flex flex-col gap-1">
             <label className="text-sm text-gray-600" htmlFor="phone">Phone</label>
             <input
@@ -119,7 +119,6 @@ export const CheckoutForm = () => {
             {errors.phone && <span className="text-xs text-red-500 min-h-[16px]">{errors.phone.message}</span>}
           </div>
         </div>
-
         <div className="flex flex-col gap-1 mb-6">
           <label className="text-sm text-gray-600" htmlFor="email">Email</label>
           <input
