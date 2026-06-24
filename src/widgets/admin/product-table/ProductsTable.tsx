@@ -13,7 +13,7 @@ export const ProductsTable = () => {
     const { data: products, isLoading, error } = useProducts();
 
     return (
-        <>
+        <div className="overflow-x-auto">
             {isLoading && <div>Loading products...</div>}
             {error && <div>error: {error.message}</div>}
             <table className="w-full">
@@ -28,7 +28,7 @@ export const ProductsTable = () => {
                 <tbody>
                     {products?.map(p => (
                         <tr key={p.id} className="border-b hover:bg-gray-50">
-                            <td className="p-3 w-16">
+                            <td className=" p-3 w-16">
                                 <div className="w-12 h-12 relative rounded-lg overflow-hidden bg-gray-100">
                                     {p.image_url ? (
                                         <Image
@@ -44,14 +44,16 @@ export const ProductsTable = () => {
                                 </div></td>
                             <td className="p-3">{p.name}</td>
                             <td className="p-3">${p.price}</td>
-                            <td className="p-3 flex gap-2">
-                                <button
-                                    onClick={() => setEditingProduct(p)}
-                                    className="text-blue-600 hover:text-blue-800"
-                                >
-                                    Edit
-                                </button>
-                                <DeleteProductButton id={p.id} name={p.name} />
+                            <td className="p-3">
+                                <div className="flex gap-2">
+                                    <button
+                                        onClick={() => setEditingProduct(p)}
+                                        className="text-blue-600 hover:text-blue-800"
+                                    >
+                                        Edit
+                                    </button>
+                                    <DeleteProductButton id={p.id} name={p.name} />
+                                </div>
                             </td>
                         </tr>
                     ))}
@@ -62,6 +64,6 @@ export const ProductsTable = () => {
                 onClose={() => setEditingProduct(null)}
                 product={editingProduct}
             />
-        </>
+        </div>
     );
 };
