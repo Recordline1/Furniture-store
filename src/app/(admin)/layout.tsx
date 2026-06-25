@@ -16,17 +16,20 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             <Container className="container flex flex-col min-h-screen ">
 
                 <div className=" md:flex min-h-screen">
-                    <aside className="md:w-64 border-b md:border-r bg-gray-50 p-3 bg-gray-200">
+                    <aside className=" border-b md:border-r bg-gray-50 p-3 bg-gray-200 ">
                         <nav>
-                            <ul className="flex md:flex-col gap-2 overflow-x-auto scrollbar-hidden">
-                                <li className="group relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-yellow-500 after:transition-transform after:duration-300 hover:after:scale-x-100">
-                                    <Link href="/admin/" className="block p-2 rounded transition-colors duration-300 hover:bg-gray-200">ALL</Link>
+                            <ul className="flex md:flex-col gap-2 overflow-x-auto scrollbar-hidden ">
+                                <li className="group relative border-b-2 border-transparent hover:border-yellow-500 transition-colors duration-300">
+                                    <Link href="/admin/" className="block p-2 rounded hover:bg-gray-200 transition-colors duration-300">ALL</Link>
                                 </li>
-                                <li className="group relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-yellow-500 after:transition-transform after:duration-300 hover:after:scale-x-100">
-                                    <Link href="/admin/products" className="block p-2 rounded transition-colors duration-300 hover:bg-gray-200">Products</Link>
+                                <li className="group relative border-b-2 border-transparent hover:border-yellow-500 transition-colors duration-300">
+                                    <Link href="/admin/products" className="block p-2 rounded hover:bg-gray-200 transition-colors duration-300">Products</Link>
                                 </li>
-                                <li className="group relative overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-yellow-500 after:transition-transform after:duration-300 hover:after:scale-x-100">
-                                    <Link href="/admin/orders" className="block p-2 rounded transition-colors duration-300 hover:bg-gray-200">Orders</Link>
+                                <li className="group relative border-b-2 border-transparent hover:border-yellow-500 transition-colors duration-300">
+                                    <Link href="/admin/orders" className="block p-2 rounded hover:bg-gray-200 transition-colors duration-300">Orders</Link>
+                                </li>
+                                <li className="group relative border-b-2 border-transparent hover:border-yellow-500 transition-colors duration-300">
+                                    <Link href="/admin/analytics" className="block p-2 rounded hover:bg-gray-200 transition-colors duration-300">Analytics</Link>
                                 </li>
                             </ul>
                         </nav>

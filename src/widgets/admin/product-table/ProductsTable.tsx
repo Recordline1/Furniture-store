@@ -5,17 +5,26 @@ import { FurnitureProduct as Product } from '@shared/types/index';
 import { ProductModal } from '@widgets/admin/product-modal/ProductModal';
 import { DeleteProductButton } from '@features/admin/products/ui/DeleteProductButton';
 import { useProducts } from '@widgets/admin/product-table/api/useProducts';
+import { Plus } from 'lucide-react';
 import Image from 'next/image';
 
 export const ProductsTable = () => {
     const [editingProduct, setEditingProduct] = useState<Product | null>(null);
-
+    const [isEditing, setIsEditing] = useState(false);
     const { data: products, isLoading, error } = useProducts();
 
     return (
+
         <div className="overflow-x-auto">
             {isLoading && <div>Loading products...</div>}
             {error && <div>error: {error.message}</div>}
+
+            <div className="flex justify-end mb-4">
+                <button className='flex gap-3 items-center font-medium border p-3 rounded-xl bg-gray-200 hover:bg-gray-300 cursor-pointer' onClick={() => setIsEditing(true)}>
+                <Plus size={15}/>
+                Add product
+                </button>
+            </div>
             <table className="w-full">
                 <thead>
                     <tr className="border-b bg-gray-50">
@@ -63,6 +72,11 @@ export const ProductsTable = () => {
                 isOpen={!!editingProduct}
                 onClose={() => setEditingProduct(null)}
                 product={editingProduct}
+            />
+            <ProductModal
+                isOpen={isEditing}
+                onClose={() => setIsEditing(false)}
+                product={null}
             />
         </div>
     );
