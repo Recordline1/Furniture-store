@@ -1,9 +1,8 @@
 'use client'
 
-import { useState,Fragment  } from 'react';
+import { Fragment, useState } from 'react';
 import { useOrders } from '@entities/order/api/useOrders';
 import { StatusSelect } from '@features/admin/ui/StatusSelect';
-// import { StatusBadge } from '@features/admin/ui/StatusBadge';
 
 const STATUSES = ['all', 'new', 'pending_payment', 'in_progress', 'shipped', 'delivered'];
 
@@ -17,12 +16,12 @@ export const OrdersTable = () => {
 
     const filtered = filterStatus === 'all'
         ? orders
-        : orders?.filter(o => o.status === filterStatus);
+        : orders?.filter((o) => o.status === filterStatus);
 
     return (
         <div>
             <div className="flex gap-2 flex-wrap mb-4">
-                {STATUSES.map(s => (
+                {STATUSES.map((s) => (
                     <button
                         key={s}
                         onClick={() => setFilterStatus(s)}
@@ -37,7 +36,7 @@ export const OrdersTable = () => {
                 ))}
             </div>
 
-            <div className="overflow-x-auto rounded-lg border border-gray-200 ">
+            <div className="overflow-x-auto rounded-lg border border-gray-200">
                 <table className="w-full text-sm text-left border-collapse">
                     <thead className="bg-gray-50 border-b">
                         <tr>
@@ -52,14 +51,13 @@ export const OrdersTable = () => {
                         {filtered?.map((order) => (
                             <Fragment key={order.id}>
                                 <tr
-                                    key={order.id}
                                     onClick={() => setExpandedId(expandedId === order.id ? null : order.id)}
                                     className="border-b hover:bg-gray-50 cursor-pointer transition-colors"
                                 >
                                     <td className="p-3 font-mono text-xs text-gray-400">{order.id.slice(0, 8)}…</td>
                                     <td className="p-3 font-medium">{order.customer_name}</td>
                                     <td className="p-3">{order.total_price} грн</td>
-                                    <td className="p-3" onClick={e => e.stopPropagation()}>
+                                    <td className="p-3" onClick={(e) => e.stopPropagation()}>
                                         <StatusSelect status={order.status} orderId={order.id} />
                                     </td>
                                     <td className="p-3 text-gray-500">
