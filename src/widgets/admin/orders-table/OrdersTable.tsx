@@ -21,7 +21,6 @@ export const OrdersTable = () => {
 
     return (
         <div>
-            {/* Фильтр */}
             <div className="flex gap-2 flex-wrap mb-4">
                 {STATUSES.map(s => (
                     <button
@@ -38,8 +37,7 @@ export const OrdersTable = () => {
                 ))}
             </div>
 
-            {/* Таблица */}
-            <div className="overflow-x-auto rounded-lg border border-gray-200">
+            <div className="overflow-x-auto rounded-lg border border-gray-200 ">
                 <table className="w-full text-sm text-left border-collapse">
                     <thead className="bg-gray-50 border-b">
                         <tr>
@@ -69,7 +67,6 @@ export const OrdersTable = () => {
                                     </td>
                                 </tr>
 
-                                {/* Раскрытые order_items */}
                                 {expandedId === order.id && (
                                     <tr key={`${order.id}-items`} className="bg-gray-50">
                                         <td colSpan={5} className="px-6 py-3">

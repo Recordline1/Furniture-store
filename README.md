@@ -1,6 +1,6 @@
 # FurnitureStore - Next.js E-commerce Platform
 
-Modern furniture e-commerce platform built with Next.js 16, featuring product catalog, shopping cart, authentication, and blog functionality.
+Modern furniture e-commerce platform built with Next.js 16, featuring product catalog, shopping cart, authentication, blog functionality, and a full admin dashboard.
 
 ## 🎯 Project Overview
 
@@ -11,6 +11,7 @@ A full-stack furniture store application with:
 - 📝 Blog section with dynamic posts
 - 🔍 Product search functionality
 - 💳 Checkout with Telegram notifications
+- 🛠️ Admin dashboard with orders management
 - 📱 Responsive design with Tailwind CSS
 
 ## 🏗️ Architecture
@@ -20,8 +21,8 @@ Project follows **Feature-Sliced Design** pattern:
 ```
 src/
 ├── app/              # Next.js App Router pages & routes
-├── entities/         # Business entities (Product, Cart, Post)
-├── features/         # Feature modules (Search, Checkout, Cart)
+├── entities/         # Business entities (Product, Cart, Post, Order)
+├── features/         # Feature modules (Search, Checkout, Cart, Admin)
 ├── shared/           # Shared utilities, types, API clients
 └── widgets/          # Composite UI components
 ```
@@ -41,11 +42,13 @@ src/
   - `contact/` - Contact page
   - `profile/` - User profile
   - `about/` - About page
+  - `(admin)/admin/` - Admin dashboard (orders, products, analytics)
 
 - `src/entities/` - Core business entities
   - `cart/` - Cart entity with Zustand store
   - `product-card/` - Product card component
   - `post-card/` - Blog post card component
+  - `order/` - Order entity with `useOrders` hook (React Query + Supabase)
 
 - `src/features/` - Feature modules
   - `cart/` - Add to cart functionality
@@ -53,6 +56,10 @@ src/
   - `checkout/` - Order submission
   - `search/` - Product search modal
   - `logout-button/` - Authentication logout
+  - `admin/` - Admin features
+    - `ui/StatusSelect` - Inline order status changer
+    - `ui/StatusBadge` - Coloured status badge component
+    - `api/updateOrderStatus` - Supabase order status update
 
 - `src/shared/` - Shared resources
   - `api/` - Supabase client, server utilities
@@ -72,12 +79,14 @@ src/
   - `TopPicks/` - Top rated products
   - `NewArrivals/` - New products
   - `Sidebar/` - Mobile navigation
+  - `admin/orders-table/` - Orders management table widget
 
 ## 🚀 Tech Stack
 
 - **Framework:** Next.js 16.2.6
 - **Runtime:** React 19.2.4, React DOM 19.2.4
 - **State Management:** Zustand 5.0.14
+- **Server State:** TanStack React Query
 - **Forms:** React Hook Form 7.77.0, Zod 4.4.3
 - **Backend:** Supabase (@supabase/ssr, @supabase/supabase-js)
 - **Styling:** Tailwind CSS 4, PostCSS
@@ -143,6 +152,7 @@ SQLite database schema included in `database.sql` with:
 - Posts (blog) table
 - Cart items table
 - User profiles
+- Orders table (`orders`, `order_items`)
 
 Run migrations during Supabase setup.
 
@@ -187,6 +197,17 @@ Run migrations during Supabase setup.
 - Manage preferences
 - Access order history
 
+### Admin Dashboard
+- Protected admin area at `/admin`
+- Responsive sidebar navigation (horizontal scroll on mobile, vertical on desktop)
+- **Orders management:**
+  - Full orders table with customer name, total, status, and date
+  - Expandable rows showing `order_items` (product name, quantity, subtotal)
+  - Inline status update via `StatusSelect` (optimistic UI with React Query)
+  - Coloured `StatusBadge` for visual status at a glance
+  - Client-side filtering by order status
+  - Status labels in Ukrainian (`Новый`, `Ожидает оплаты`, `В обработке`, `Отправлен`, `Доставлен`)
+
 ## 🔌 API Integration
 
 **Supabase:**
@@ -194,6 +215,7 @@ Run migrations during Supabase setup.
 - Real-time subscriptions
 - User authentication
 - Row-level security (RLS)
+- Orders fetched with nested `order_items` and related `products`
 
 **Telegram:**
 - Order notifications sent to admin chat
@@ -205,6 +227,7 @@ Run migrations during Supabase setup.
 - Tailwind CSS breakpoints (sm, md, lg, xl)
 - Hamburger menu for mobile
 - Touch-friendly interactions
+- Admin sidebar: horizontal scrollable nav on mobile, vertical on desktop
 
 ## 🚦 Getting Started with Development
 
@@ -218,6 +241,7 @@ Run migrations during Supabase setup.
    - Test product browsing
    - Try authentication flow
    - Test cart functionality
+   - Admin panel: http://localhost:3000/admin
 
 3. **Modify pages:**
    - Edit files in `src/app/`
@@ -241,6 +265,7 @@ Run migrations during Supabase setup.
 - [React 19 Docs](https://react.dev)
 - [Supabase Documentation](https://supabase.com/docs)
 - [Zustand Documentation](https://github.com/pmndrs/zustand)
+- [TanStack React Query](https://tanstack.com/query/latest)
 - [Tailwind CSS](https://tailwindcss.com)
 
 ## 🚀 Deployment
