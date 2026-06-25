@@ -69,21 +69,7 @@ export default async function ProfilePage() {
                             </div>
                         </div>
                     </section>
-                    {profile?.role === 'admin' && (
-                        <section className="bg-gradient-to-br from-indigo-600 to-blue-700 p-8 rounded-3xl shadow-lg text-white mb-6">
-                            <h3 className="text-lg font-semibold mb-4 opacity-90">Quick Sales Stats</h3>
-                            <div className="grid sm:grid-cols-2 gap-4">
-                                <div className="bg-white/10 p-4 rounded-2xl">
-                                    <p className="text-xs opacity-75 uppercase">Total Revenue</p>
-                                    <p className="text-2xl font-bold">$12,450</p>
-                                </div>
-                                <div className="bg-white/10 p-4 rounded-2xl">
-                                    <p className="text-xs opacity-75 uppercase">New Orders</p>
-                                    <p className="text-2xl font-bold">18</p>
-                                </div>
-                            </div>
-                        </section>
-                    )}
+                    
 
                     <section className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
                         <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">

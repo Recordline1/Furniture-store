@@ -13,7 +13,7 @@ export const ProductCard = ({ product, view = 'grid' }: ProductCardProps) => {
     switch (variant) {
       case 'new': return 'bg-brand';
       case 'sale': return 'bg-[#E97171]';
-      default: return 'bg-transparent';
+      default: return 'hidden';
     }
   };
   const isSale = product.old_price && product.old_price > product.price;

@@ -3,7 +3,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@shared/api/supabase';
-import {FurnitureProduct as  Product } from '@shared/types/index';
+import { FurnitureProduct as Product } from '@shared/types/index';
 
 export const useProducts = () => {
   return useQuery({
@@ -16,6 +16,7 @@ export const useProducts = () => {
 
       if (error) throw error;
       return data as Product[];
-    }
+    },
+    staleTime: 1000 * 60,
   });
 };
